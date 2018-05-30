@@ -1,0 +1,587 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GitHub Users are shown correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GitHubUsers
+    errorMessage=""
+    loadMoreUsers={[Function]}
+    loadUsers={[Function]}
+    loadingState="COMPLETED"
+    nextLink="someNextLink"
+    users={
+        Array [
+            Object {
+              "avatar_url": "https://avatars0.githubusercontent.com/u/1?v=4",
+              "gravatar_id": "",
+              "html_url": "https://github.com/mojombo",
+              "id": 1,
+              "login": "mojombo",
+              "url": "https://api.github.com/users/mojombo",
+            },
+            Object {
+              "avatar_url": "https://avatars0.githubusercontent.com/u/2?v=4",
+              "gravatar_id": "",
+              "html_url": "https://github.com/defunkt",
+              "id": 2,
+              "login": "defunkt",
+              "url": "https://api.github.com/users/defunkt",
+            },
+            Object {
+              "avatar_url": "https://avatars0.githubusercontent.com/u/3?v=4",
+              "gravatar_id": "",
+              "html_url": "https://github.com/pjhyett",
+              "id": 3,
+              "login": "pjhyett",
+              "url": "https://api.github.com/users/pjhyett",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <LoadingIndicator
+          errorMessage=""
+          loadingState="COMPLETED"
+/>,
+        <Grid
+          bsClass="container"
+          componentClass="div"
+          fluid={false}
+>
+          <Row
+                    bsClass="row"
+                    componentClass="div"
+          >
+                    <UserCard
+                              avatarUrl="https://avatars0.githubusercontent.com/u/1?v=4"
+                              username="mojombo"
+                    />
+                    <UserCard
+                              avatarUrl="https://avatars0.githubusercontent.com/u/2?v=4"
+                              username="defunkt"
+                    />
+                    <UserCard
+                              avatarUrl="https://avatars0.githubusercontent.com/u/3?v=4"
+                              username="pjhyett"
+                    />
+          </Row>
+          <Row
+                    bsClass="row"
+                    componentClass="div"
+          >
+                    <Col
+                              bsClass="col"
+                              className="text-center"
+                              componentClass="div"
+                              md={12}
+                              xs={12}
+                    >
+                              <Button
+                                        active={false}
+                                        block={false}
+                                        bsClass="btn"
+                                        bsStyle="default"
+                                        disabled={false}
+                                        onClick={[Function]}
+                              >
+                                        Load More...
+                              </Button>
+                    </Col>
+          </Row>
+</Grid>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "errorMessage": "",
+          "loadingState": "COMPLETED",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "bsClass": "container",
+          "children": Array [
+            <Row
+              bsClass="row"
+              componentClass="div"
+>
+              <UserCard
+                            avatarUrl="https://avatars0.githubusercontent.com/u/1?v=4"
+                            username="mojombo"
+              />
+              <UserCard
+                            avatarUrl="https://avatars0.githubusercontent.com/u/2?v=4"
+                            username="defunkt"
+              />
+              <UserCard
+                            avatarUrl="https://avatars0.githubusercontent.com/u/3?v=4"
+                            username="pjhyett"
+              />
+</Row>,
+            <Row
+              bsClass="row"
+              componentClass="div"
+>
+              <Col
+                            bsClass="col"
+                            className="text-center"
+                            componentClass="div"
+                            md={12}
+                            xs={12}
+              >
+                            <Button
+                                          active={false}
+                                          block={false}
+                                          bsClass="btn"
+                                          bsStyle="default"
+                                          disabled={false}
+                                          onClick={[Function]}
+                            >
+                                          Load More...
+                            </Button>
+              </Col>
+</Row>,
+          ],
+          "componentClass": "div",
+          "fluid": false,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "row",
+              "children": Array [
+                <UserCard
+                  avatarUrl="https://avatars0.githubusercontent.com/u/1?v=4"
+                  username="mojombo"
+/>,
+                <UserCard
+                  avatarUrl="https://avatars0.githubusercontent.com/u/2?v=4"
+                  username="defunkt"
+/>,
+                <UserCard
+                  avatarUrl="https://avatars0.githubusercontent.com/u/3?v=4"
+                  username="pjhyett"
+/>,
+              ],
+              "componentClass": "div",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "class",
+                "props": Object {
+                  "avatarUrl": "https://avatars0.githubusercontent.com/u/1?v=4",
+                  "username": "mojombo",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "2",
+                "nodeType": "class",
+                "props": Object {
+                  "avatarUrl": "https://avatars0.githubusercontent.com/u/2?v=4",
+                  "username": "defunkt",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "3",
+                "nodeType": "class",
+                "props": Object {
+                  "avatarUrl": "https://avatars0.githubusercontent.com/u/3?v=4",
+                  "username": "pjhyett",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "row",
+              "children": <Col
+                bsClass="col"
+                className="text-center"
+                componentClass="div"
+                md={12}
+                xs={12}
+>
+                <Button
+                                active={false}
+                                block={false}
+                                bsClass="btn"
+                                bsStyle="default"
+                                disabled={false}
+                                onClick={[Function]}
+                >
+                                Load More...
+                </Button>
+</Col>,
+              "componentClass": "div",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "col",
+                "children": <Button
+                  active={false}
+                  block={false}
+                  bsClass="btn"
+                  bsStyle="default"
+                  disabled={false}
+                  onClick={[Function]}
+>
+                  Load More...
+</Button>,
+                "className": "text-center",
+                "componentClass": "div",
+                "md": 12,
+                "xs": 12,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "active": false,
+                  "block": false,
+                  "bsClass": "btn",
+                  "bsStyle": "default",
+                  "children": "Load More...",
+                  "disabled": false,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Load More...",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <LoadingIndicator
+            errorMessage=""
+            loadingState="COMPLETED"
+/>,
+          <Grid
+            bsClass="container"
+            componentClass="div"
+            fluid={false}
+>
+            <Row
+                        bsClass="row"
+                        componentClass="div"
+            >
+                        <UserCard
+                                    avatarUrl="https://avatars0.githubusercontent.com/u/1?v=4"
+                                    username="mojombo"
+                        />
+                        <UserCard
+                                    avatarUrl="https://avatars0.githubusercontent.com/u/2?v=4"
+                                    username="defunkt"
+                        />
+                        <UserCard
+                                    avatarUrl="https://avatars0.githubusercontent.com/u/3?v=4"
+                                    username="pjhyett"
+                        />
+            </Row>
+            <Row
+                        bsClass="row"
+                        componentClass="div"
+            >
+                        <Col
+                                    bsClass="col"
+                                    className="text-center"
+                                    componentClass="div"
+                                    md={12}
+                                    xs={12}
+                        >
+                                    <Button
+                                                active={false}
+                                                block={false}
+                                                bsClass="btn"
+                                                bsStyle="default"
+                                                disabled={false}
+                                                onClick={[Function]}
+                                    >
+                                                Load More...
+                                    </Button>
+                        </Col>
+            </Row>
+</Grid>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "errorMessage": "",
+            "loadingState": "COMPLETED",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "container",
+            "children": Array [
+              <Row
+                bsClass="row"
+                componentClass="div"
+>
+                <UserCard
+                                avatarUrl="https://avatars0.githubusercontent.com/u/1?v=4"
+                                username="mojombo"
+                />
+                <UserCard
+                                avatarUrl="https://avatars0.githubusercontent.com/u/2?v=4"
+                                username="defunkt"
+                />
+                <UserCard
+                                avatarUrl="https://avatars0.githubusercontent.com/u/3?v=4"
+                                username="pjhyett"
+                />
+</Row>,
+              <Row
+                bsClass="row"
+                componentClass="div"
+>
+                <Col
+                                bsClass="col"
+                                className="text-center"
+                                componentClass="div"
+                                md={12}
+                                xs={12}
+                >
+                                <Button
+                                                active={false}
+                                                block={false}
+                                                bsClass="btn"
+                                                bsStyle="default"
+                                                disabled={false}
+                                                onClick={[Function]}
+                                >
+                                                Load More...
+                                </Button>
+                </Col>
+</Row>,
+            ],
+            "componentClass": "div",
+            "fluid": false,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "row",
+                "children": Array [
+                  <UserCard
+                    avatarUrl="https://avatars0.githubusercontent.com/u/1?v=4"
+                    username="mojombo"
+/>,
+                  <UserCard
+                    avatarUrl="https://avatars0.githubusercontent.com/u/2?v=4"
+                    username="defunkt"
+/>,
+                  <UserCard
+                    avatarUrl="https://avatars0.githubusercontent.com/u/3?v=4"
+                    username="pjhyett"
+/>,
+                ],
+                "componentClass": "div",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "1",
+                  "nodeType": "class",
+                  "props": Object {
+                    "avatarUrl": "https://avatars0.githubusercontent.com/u/1?v=4",
+                    "username": "mojombo",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "2",
+                  "nodeType": "class",
+                  "props": Object {
+                    "avatarUrl": "https://avatars0.githubusercontent.com/u/2?v=4",
+                    "username": "defunkt",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "3",
+                  "nodeType": "class",
+                  "props": Object {
+                    "avatarUrl": "https://avatars0.githubusercontent.com/u/3?v=4",
+                    "username": "pjhyett",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "row",
+                "children": <Col
+                  bsClass="col"
+                  className="text-center"
+                  componentClass="div"
+                  md={12}
+                  xs={12}
+>
+                  <Button
+                                    active={false}
+                                    block={false}
+                                    bsClass="btn"
+                                    bsStyle="default"
+                                    disabled={false}
+                                    onClick={[Function]}
+                  >
+                                    Load More...
+                  </Button>
+</Col>,
+                "componentClass": "div",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "bsClass": "col",
+                  "children": <Button
+                    active={false}
+                    block={false}
+                    bsClass="btn"
+                    bsStyle="default"
+                    disabled={false}
+                    onClick={[Function]}
+>
+                    Load More...
+</Button>,
+                  "className": "text-center",
+                  "componentClass": "div",
+                  "md": 12,
+                  "xs": 12,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "active": false,
+                    "block": false,
+                    "bsClass": "btn",
+                    "bsStyle": "default",
+                    "children": "Load More...",
+                    "disabled": false,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Load More...",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
