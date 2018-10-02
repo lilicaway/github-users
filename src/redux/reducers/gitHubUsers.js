@@ -29,18 +29,23 @@ export default usersReducer;
 
 // Selectors
 
-export const getUsers = state => {
-  return state.list;
-};
+export class GitHubUsersApi {
+  constructor(state) {
+    this.state = state;
+  }
 
-export const getUsersNextLink = state => {
-  return state.nextLink;
-};
-
-export const getLoadingState = state => {
-  return loadingIndicatorApi.getLoadingState(state.loadingIndicator);
-};
-
-export const getErrorMessage = state => {
-  return loadingIndicatorApi.getLoadingDataErrorMessage(state.loadingIndicator);
-};
+  getUsers() {
+    return this.state.list;
+  }
+  getNextLink() {
+    return this.state.nextLink;
+  }
+  getLoadingState() {
+    return loadingIndicatorApi.getLoadingState(this.state.loadingIndicator);
+  }
+  getErrorMessage() {
+    return loadingIndicatorApi.getLoadingDataErrorMessage(
+      this.state.loadingIndicator
+    );
+  }
+}

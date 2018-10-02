@@ -6,12 +6,7 @@ import { Image, Button, Grid, Row, Panel, Col } from 'react-bootstrap';
 import LoadingIndicator from './LoadingIndicator';
 import { LoadingState } from '../redux/reducers/loadingIndicator';
 import { loadUsers } from '../redux/actionCreators';
-import {
-  getUsers,
-  getUsersNextLink,
-  getUsersLoadingState,
-  getUsersLoadingErrorMessage,
-} from '../redux/reducers';
+import { gitHubUsersApi } from '../redux/reducers';
 
 class GitHubUsers extends Component {
   static propTypes = {
@@ -63,11 +58,12 @@ class GitHubUsers extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  const userDataApi = gitHubUsersApi(state);
   return {
-    users: getUsers(state),
-    loadingState: getUsersLoadingState(state),
-    errorMessage: getUsersLoadingErrorMessage(state),
-    nextLink: getUsersNextLink(state),
+    users: userDataApi.getUsers(),
+    loadingState: userDataApi.getLoadingState(),
+    errorMessage: userDataApi.getErrorMessage(),
+    nextLink: userDataApi.getNextLink(),
   };
 };
 

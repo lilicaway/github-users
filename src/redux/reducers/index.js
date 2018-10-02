@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import usersReducer, * as gitHubUsersApi from './gitHubUsers';
+import usersReducer, { GitHubUsersApi } from './gitHubUsers';
 import currentUserReducer, * as currentUserApi from './gitHubCurrentUserDetails';
 
 const reducers = combineReducers({
@@ -11,20 +11,8 @@ export default reducers;
 
 // Selectors
 
-export const getUsers = state => {
-  return gitHubUsersApi.getUsers(state.users);
-};
-
-export const getUsersNextLink = state => {
-  return gitHubUsersApi.getUsersNextLink(state.users);
-};
-
-export const getUsersLoadingState = state => {
-  return gitHubUsersApi.getLoadingState(state.users);
-};
-
-export const getUsersLoadingErrorMessage = state => {
-  return gitHubUsersApi.getErrorMessage(state.users);
+export const gitHubUsersApi = state => {
+  return new GitHubUsersApi(state.users);
 };
 
 export const getCurrentUser = state => {
