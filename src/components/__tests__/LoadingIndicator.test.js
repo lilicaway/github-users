@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { Alert } from 'react-bootstrap';
 
 import LoadingIndicator from '../LoadingIndicator';
-import { LoadingState } from '../../redux/reducers/LoadingIndicator';
+import { LoadingState } from '../../redux/reducers/loadingIndicator';
 
 Enzyme.configure({ adapter: new Adapter() });
 

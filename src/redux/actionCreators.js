@@ -31,8 +31,8 @@ export const setCurrentUser = user => {
   return { type: actionType.SET_CURRENT_USER, payload: user };
 };
 
-export const loadUsers = opt_nextLink => {
-  const url = opt_nextLink || 'https://api.github.com/users';
+export const loadUsers = (nextLink?: string) => {
+  const url = nextLink || 'https://api.github.com/users';
   return dispatch => {
     dispatch(setDataAsLoading('USERS'));
     axios

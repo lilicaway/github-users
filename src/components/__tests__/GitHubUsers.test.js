@@ -8,7 +8,7 @@ import GitHubUsers, {
   UserCardForTest,
 } from '../GitHubUsers';
 import { Button } from 'react-bootstrap';
-import { LoadingState } from '../../redux/reducers/LoadingIndicator';
+import { LoadingState } from '../../redux/reducers/loadingIndicator';
 
 Enzyme.configure({ adapter: new Adapter() });
 
