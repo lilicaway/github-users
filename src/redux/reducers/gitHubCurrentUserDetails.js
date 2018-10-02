@@ -20,14 +20,20 @@ export default currentUserReducer;
 
 // Selectors
 
-export const getCurrentUser = state => {
-  return state.user;
-};
+export class CurrentUserApi {
+  constructor(state) {
+    this.state = state;
+  }
 
-export const getCurrentUserLoadingState = state => {
-  return loadingIndicatorApi.getLoadingState(state.loadingIndicator);
-};
+  getCurrentUser() {
+    return this.state.user;
+  }
 
-export const getCurrentUserLoadingErrorMessage = state => {
-  return loadingIndicatorApi.getLoadingDataErrorMessage(state.loadingIndicator);
-};
+  getLoadingState() {
+    return loadingIndicatorApi.getLoadingState(this.state.loadingIndicator);
+  }
+
+  getErrorMessage() {
+    return loadingIndicatorApi.getLoadingDataErrorMessage(this.state.loadingIndicator);
+  }
+}
