@@ -1,7 +1,10 @@
 import { combineReducers, Reducer } from 'redux';
 import { GitHubUser } from '../../types/GitHubUser';
-import { GitHubUsersAction } from '../../types/GitHubUsersAction';
-import * as actionType from '../actions';
+import {
+  ActionType,
+  DataLoaderActionSubtype,
+  GitHubUsersAction
+} from '../actions';
 import createLoadingIndicatorReducer, * as loadingIndicatorApi from './loadingIndicator';
 
 export type UserState = GitHubUser | null;
@@ -11,9 +14,8 @@ const userReducer: Reducer<UserState, GitHubUsersAction> = (
   action
 ) => {
   switch (action.type) {
-    case actionType.SET_CURRENT_USER:
-      // TODO: figure out a way to have properly typed payload
-      return (action.payload as {}) as GitHubUser;
+    case ActionType.SET_CURRENT_USER:
+      return action.payload;
     default:
       return state;
   }
@@ -29,7 +31,9 @@ const currentUserReducer: Reducer<
   GitHubUsersAction
 > = combineReducers({
   user: userReducer,
-  loadingIndicator: createLoadingIndicatorReducer('CURRENT_USER')
+  loadingIndicator: createLoadingIndicatorReducer(
+    DataLoaderActionSubtype.CURRENT_USER
+  )
 });
 
 export default currentUserReducer;

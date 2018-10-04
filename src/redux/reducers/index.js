@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import usersReducer, { GitHubUsersApi } from './gitHubUsers';
 import currentUserReducer, { CurrentUserApi } from './gitHubCurrentUserDetails';
+import usersReducer, { GitHubUsersApi } from './gitHubUsers';
 
 const reducers = combineReducers({
   users: usersReducer,

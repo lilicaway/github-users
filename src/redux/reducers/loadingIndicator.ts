@@ -1,6 +1,9 @@
 import { Reducer } from 'redux';
-import { GitHubUsersAction } from '../../types/GitHubUsersAction';
-import * as actionType from '../actions';
+import {
+  ActionType,
+  DataLoaderActionSubtype,
+  GitHubUsersAction
+} from '../actions';
 
 export enum LoadingState {
   INITIAL = 'INITIAL',
@@ -15,7 +18,7 @@ export interface LoadingIndicatorState {
 }
 
 const createLoadingIndicatorReducer = (
-  actionPrefix: string
+  actionSubtype: DataLoaderActionSubtype
 ): Reducer<LoadingIndicatorState, GitHubUsersAction> => {
   return (
     state = {
@@ -25,31 +28,35 @@ const createLoadingIndicatorReducer = (
     action
   ) => {
     switch (action.type) {
-      case `${actionPrefix}_${actionType.DATA_LOADER_LOADING}`:
-        return {
-          ...state,
-          loadingState: LoadingState.LOADING,
-          errorMessage: ''
-        };
-      case `${actionPrefix}_${actionType.DATA_LOADER_COMPLETED}`:
-        return {
-          ...state,
-          loadingState: LoadingState.COMPLETED,
-          errorMessage: ''
-        };
-      case `${actionPrefix}_${actionType.DATA_LOADER_ERROR}`:
-        const errorMessage =
-          action.payload === undefined
-            ? 'Unknown Error'
-            : action.payload.toString();
-        return {
-          ...state,
-          loadingState: LoadingState.ERROR,
-          errorMessage
-        };
-      default:
-        return state;
+      case ActionType.DATA_LOADER_LOADING:
+        if (action.subType === actionSubtype) {
+          return {
+            ...state,
+            loadingState: LoadingState.LOADING,
+            errorMessage: ''
+          };
+        }
+        break;
+      case ActionType.DATA_LOADER_COMPLETED:
+        if (action.subType === actionSubtype) {
+          return {
+            ...state,
+            loadingState: LoadingState.COMPLETED,
+            errorMessage: ''
+          };
+        }
+        break;
+      case ActionType.DATA_LOADER_ERROR:
+        if (action.subType === actionSubtype) {
+          return {
+            ...state,
+            loadingState: LoadingState.ERROR,
+            errorMessage: action.payload
+          };
+        }
+        break;
     }
+    return state;
   };
 };
 

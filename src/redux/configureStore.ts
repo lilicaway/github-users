@@ -1,8 +1,8 @@
 import { applyMiddleware, createStore, Store } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import { GitHubUsersAction } from '../types/GitHubUsersAction';
 import { GitHubUsersState } from '../types/GitHubUsersState';
+import { GitHubUsersAction } from './actions';
 import reducers from './reducers';
 
 const configureStore = () => {
