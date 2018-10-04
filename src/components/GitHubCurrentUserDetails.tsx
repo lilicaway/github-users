@@ -19,7 +19,7 @@ interface UrlParams {
 
 interface Props extends RouteComponentProps<UrlParams> {
   loadUser: (username: string) => void;
-  user: GitHubUser;
+  user?: GitHubUser;
   loadingState: string;
   errorMessage: string;
 }
@@ -35,14 +35,18 @@ class GitHubCurrentUserDetails extends React.Component<Props> {
   }
 
   public render() {
-    const { avatar_url, login, id, html_url } = this.props.user;
-
-    return (
-      <div>
+    if (!this.props.user) {
+      return (
         <LoadingIndicator
           loadingState={this.props.loadingState}
           errorMessage={this.props.errorMessage}
         />
+      );
+    }
+    const { avatar_url, login, id, html_url } = this.props.user;
+
+    return (
+      <div>
         <Link to="/users">
           <Button bsSize="small" onClick={this.props.history.goBack}>
             <span className="glyphicon glyphicon-chevron-left" />
