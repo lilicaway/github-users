@@ -31,8 +31,14 @@
   "devDependencies": {
     "@types/jest": "^23.3.2",
     "@types/node": "^10.11.3",
+    "@types/parse-link-header": "^1.0.0",
     "@types/react": "^16.4.14",
+    "@types/react-bootstrap": "^0.32.14",
     "@types/react-dom": "^16.0.8",
+    "@types/react-redux": "^6.0.9",
+    "@types/react-router": "^4.0.31",
+    "@types/react-router-bootstrap": "^0.24.5",
+    "@types/react-router-dom": "^4.3.1",
     "typescript": "^3.1.1"
   }
 }

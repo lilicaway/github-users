@@ -1,27 +1,36 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import * as React from 'react';
+import { Button, Col, Grid, Image, Panel, Row } from 'react-bootstrap';
+import { connect, MapDispatchToPropsParam, MapStateToPropsParam } from 'react-redux';
+import { Link, RouteComponentProps } from 'react-router-dom';
+import { Action } from 'redux';
 import { loadUser } from '../redux/actionCreators';
-import LoadingIndicator from './LoadingIndicator';
-import { Panel, Grid, Image, Row, Col, Button } from 'react-bootstrap';
-
 import { currentUserApi } from '../redux/reducers';
+import { GitHubUser } from '../types/GitHubUser';
+import { GitHubUsersState } from '../types/GitHubUsersState';
+import LoadingIndicator from './LoadingIndicator';
 
-class GitHubCurrentUserDetails extends Component {
-  static propTypes = {
-    loadUser: PropTypes.func.isRequired,
-    user: PropTypes.object.isRequired,
-    loadingState: PropTypes.string.isRequired,
-    errorMessage: PropTypes.string.isRequired,
-  };
+interface UrlParams {
+  username: string;
+}
 
-  componentDidMount() {
+interface Props extends RouteComponentProps<UrlParams> {
+  loadUser: (username: string) => void,
+  user: GitHubUser,
+  loadingState: string,
+  errorMessage: string,
+}
+
+class GitHubCurrentUserDetails extends React.Component<Props>  {
+  constructor(props: Props) {
+    super(props);
+  }
+
+  public componentDidMount() {
     const username = this.props.match.params.username;
     this.props.loadUser(username);
   }
 
-  render() {
+  public render() {
     const { avatar_url, login, id, html_url } = this.props.user;
 
     return (
@@ -40,7 +49,7 @@ class GitHubCurrentUserDetails extends Component {
             <Grid>
               <Row>
                 <Col xs={12} sm={6}>
-                  <Image src={avatar_url} circle width="300px" />
+                  <Image src={avatar_url} circle={true} width="300px" />
                 </Col>
                 <Col xs={12} sm={6}>
                   <h3>
@@ -69,22 +78,25 @@ class GitHubCurrentUserDetails extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  const userApi = currentUserApi(state);
-  return {
-    user: userApi.getCurrentUser(),
-    loadingState: userApi.getLoadingState(),
-    errorMessage: userApi.getErrorMessage(),
+const mapStateToProps: MapStateToPropsParam<Partial<Props>, Props, GitHubUsersState> =
+  (state, ownProps): Partial<Props> => {
+    const userApi = currentUserApi(state);
+    return {
+      user: userApi.getCurrentUser(),
+      loadingState: userApi.getLoadingState(),
+      errorMessage: userApi.getErrorMessage(),
+    };
   };
-};
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    loadUser: username => {
-      dispatch(loadUser(username));
-    },
+const mapDispatchToProps: MapDispatchToPropsParam<Partial<Props>, Props> =
+  (dispatch, ownProps): Partial<Props> => {
+    return {
+      loadUser: (username: string) => {
+        // TODO: figure out a better way other than this ugly double cast.
+        dispatch(loadUser(username) as {} as Action<any>);
+      },
+    };
   };
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   GitHubCurrentUserDetails
