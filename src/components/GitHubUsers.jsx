@@ -15,7 +15,7 @@ class GitHubUsers extends Component {
     users: PropTypes.array.isRequired,
     loadingState: PropTypes.string.isRequired,
     errorMessage: PropTypes.string.isRequired,
-    nextLink: PropTypes.string.isRequired,
+    nextLink: PropTypes.string.isRequired
   };
 
   componentDidMount() {
@@ -63,7 +63,7 @@ const mapStateToProps = (state, ownProps) => {
     users: userDataApi.getUsers(),
     loadingState: userDataApi.getLoadingState(),
     errorMessage: userDataApi.getErrorMessage(),
-    nextLink: userDataApi.getNextLink(),
+    nextLink: userDataApi.getNextLink()
   };
 };
 
@@ -74,17 +74,20 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     loadMoreUsers: nextLink => {
       dispatch(loadUsers(nextLink));
-    },
+    }
   };
 };
 
 export const UnwrappedGitHubUsersForTest = GitHubUsers;
-export default connect(mapStateToProps, mapDispatchToProps)(GitHubUsers);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GitHubUsers);
 
 class UserCard extends Component {
   static propTypes = {
     avatarUrl: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired
   };
 
   render() {

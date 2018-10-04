@@ -63,8 +63,8 @@ test('loadUsers', done => {
             headers: {
               link:
                 '<https://api.github.com/users?since=46>; rel="next",' +
-                ' <https://api.github.com/users{?since}>; rel="first"',
-            },
+                ' <https://api.github.com/users{?since}>; rel="first"'
+            }
           })
           .then(() => {
             expect(allUsersRequest.url).toEqual('https://api.github.com/users');
@@ -101,7 +101,7 @@ test('loadUser', done => {
         currentUserRequest
           .respondWith({
             status: 200,
-            response: expectedUser,
+            response: expectedUser
           })
           .then(() => {
             expect(currentUserRequest.url).toEqual(

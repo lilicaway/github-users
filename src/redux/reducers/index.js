@@ -4,7 +4,7 @@ import currentUserReducer, { CurrentUserApi } from './gitHubCurrentUserDetails';
 
 const reducers = combineReducers({
   users: usersReducer,
-  currentUser: currentUserReducer,
+  currentUser: currentUserReducer
 });
 
 export default reducers;
@@ -17,4 +17,4 @@ export const gitHubUsersApi = state => {
 
 export const currentUserApi = state => {
   return new CurrentUserApi(state.currentUser);
-}
+};

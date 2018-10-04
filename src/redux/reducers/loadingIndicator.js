@@ -4,7 +4,7 @@ export const LoadingState = Object.freeze({
   INITIAL: 'INITIAL',
   LOADING: 'LOADING',
   COMPLETED: 'COMPLETED',
-  ERROR: 'ERROR',
+  ERROR: 'ERROR'
 });
 
 const createLoadingIndicatorReducer = actionPrefix => {
@@ -17,19 +17,19 @@ const createLoadingIndicatorReducer = actionPrefix => {
         return {
           ...state,
           loadingState: LoadingState.LOADING,
-          errorMessage: '',
+          errorMessage: ''
         };
       case `${actionPrefix}_${actionType.DATA_LOADER_COMPLETED}`:
         return {
           ...state,
           loadingState: LoadingState.COMPLETED,
-          errorMessage: '',
+          errorMessage: ''
         };
       case `${actionPrefix}_${actionType.DATA_LOADER_ERROR}`:
         return {
           ...state,
           loadingState: LoadingState.ERROR,
-          errorMessage: action.payload,
+          errorMessage: action.payload
         };
       default:
         return state;

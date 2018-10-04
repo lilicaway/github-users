@@ -13,7 +13,7 @@ const userReducer = (state = {}, action) => {
 
 const currentUserReducer = combineReducers({
   user: userReducer,
-  loadingIndicator: createLoadingIndicatorReducer('CURRENT_USER'),
+  loadingIndicator: createLoadingIndicatorReducer('CURRENT_USER')
 });
 
 export default currentUserReducer;
@@ -34,6 +34,8 @@ export class CurrentUserApi {
   }
 
   getErrorMessage() {
-    return loadingIndicatorApi.getLoadingDataErrorMessage(this.state.loadingIndicator);
+    return loadingIndicatorApi.getLoadingDataErrorMessage(
+      this.state.loadingIndicator
+    );
   }
 }

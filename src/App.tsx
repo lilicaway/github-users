@@ -28,12 +28,14 @@ const App = ({ store }) => (
               <Nav>
                 <LinkContainer exact={true} to="/">
                   <NavItem eventKey={1}>
-                    <span className="glyphicon glyphicon-home" />&nbsp;Home
+                    <span className="glyphicon glyphicon-home" />
+                    &nbsp;Home
                   </NavItem>
                 </LinkContainer>
                 <LinkContainer exact={true} to="/users">
                   <NavItem eventKey={2}>
-                    <span className="glyphicon glyphicon-user" />&nbsp;Users
+                    <span className="glyphicon glyphicon-user" />
+                    &nbsp;Users
                   </NavItem>
                 </LinkContainer>
               </Nav>

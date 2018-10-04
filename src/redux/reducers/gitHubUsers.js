@@ -23,7 +23,7 @@ const nextLinkReducer = (state = '', action) => {
 const usersReducer = combineReducers({
   list: usersListReducer,
   nextLink: nextLinkReducer,
-  loadingIndicator: createLoadingIndicatorReducer('USERS'),
+  loadingIndicator: createLoadingIndicatorReducer('USERS')
 });
 export default usersReducer;
 

@@ -6,7 +6,7 @@ import { LoadingState } from '../redux/reducers/loadingIndicator';
 class LoadingIndicator extends Component {
   static propTypes = {
     loadingState: PropTypes.string.isRequired,
-    errorMessage: PropTypes.string.isRequired,
+    errorMessage: PropTypes.string.isRequired
   };
 
   render() {

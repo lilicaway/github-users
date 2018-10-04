@@ -8,7 +8,9 @@ import reducers from './reducers';
 const configureStore = () => {
   const middlewares = [thunk];
   const store: Store<GitHubUsersState, GitHubUsersAction> = createStore(
-    reducers, composeWithDevTools(applyMiddleware(...middlewares)));
+    reducers,
+    composeWithDevTools(applyMiddleware(...middlewares))
+  );
   return store;
 };
 

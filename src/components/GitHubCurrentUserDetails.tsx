@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { Button, Col, Grid, Image, Panel, Row } from 'react-bootstrap';
-import { connect, MapDispatchToPropsParam, MapStateToPropsParam } from 'react-redux';
+import {
+  connect,
+  MapDispatchToPropsParam,
+  MapStateToPropsParam
+} from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Action } from 'redux';
 import { loadUser } from '../redux/actionCreators';
@@ -14,13 +18,13 @@ interface UrlParams {
 }
 
 interface Props extends RouteComponentProps<UrlParams> {
-  loadUser: (username: string) => void,
-  user: GitHubUser,
-  loadingState: string,
-  errorMessage: string,
+  loadUser: (username: string) => void;
+  user: GitHubUser;
+  loadingState: string;
+  errorMessage: string;
 }
 
-class GitHubCurrentUserDetails extends React.Component<Props>  {
+class GitHubCurrentUserDetails extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
   }
@@ -41,7 +45,8 @@ class GitHubCurrentUserDetails extends React.Component<Props>  {
         />
         <Link to="/users">
           <Button bsSize="small" onClick={this.props.history.goBack}>
-            <span className="glyphicon glyphicon-chevron-left" />Users
+            <span className="glyphicon glyphicon-chevron-left" />
+            Users
           </Button>
         </Link>
         <Panel className="container-fluid">
@@ -53,8 +58,8 @@ class GitHubCurrentUserDetails extends React.Component<Props>  {
                 </Col>
                 <Col xs={12} sm={6}>
                   <h3>
-                    <span className="glyphicon glyphicon-user" />&nbsp;User
-                    details
+                    <span className="glyphicon glyphicon-user" />
+                    &nbsp;User details
                   </h3>
                   <ul>
                     <li>
@@ -78,26 +83,32 @@ class GitHubCurrentUserDetails extends React.Component<Props>  {
   }
 }
 
-const mapStateToProps: MapStateToPropsParam<Partial<Props>, Props, GitHubUsersState> =
-  (state, ownProps): Partial<Props> => {
-    const userApi = currentUserApi(state);
-    return {
-      user: userApi.getCurrentUser(),
-      loadingState: userApi.getLoadingState(),
-      errorMessage: userApi.getErrorMessage(),
-    };
+const mapStateToProps: MapStateToPropsParam<
+  Partial<Props>,
+  Props,
+  GitHubUsersState
+> = (state, ownProps): Partial<Props> => {
+  const userApi = currentUserApi(state);
+  return {
+    user: userApi.getCurrentUser(),
+    loadingState: userApi.getLoadingState(),
+    errorMessage: userApi.getErrorMessage()
   };
+};
 
-const mapDispatchToProps: MapDispatchToPropsParam<Partial<Props>, Props> =
-  (dispatch, ownProps): Partial<Props> => {
-    return {
-      loadUser: (username: string) => {
-        // TODO: figure out a better way other than this ugly double cast.
-        dispatch(loadUser(username) as {} as Action<any>);
-      },
-    };
+const mapDispatchToProps: MapDispatchToPropsParam<Partial<Props>, Props> = (
+  dispatch,
+  ownProps
+): Partial<Props> => {
+  return {
+    loadUser: (username: string) => {
+      // TODO: figure out a better way other than this ugly double cast.
+      dispatch((loadUser(username) as {}) as Action<any>);
+    }
   };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  GitHubCurrentUserDetails
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GitHubCurrentUserDetails);

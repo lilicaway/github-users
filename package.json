@@ -26,6 +26,7 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
+    "format": "prettier --write \"src/**/*.{ts,js,tsx,jsx,css,json} \" ",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
@@ -39,6 +40,7 @@
     "@types/react-router": "^4.0.31",
     "@types/react-router-bootstrap": "^0.24.5",
     "@types/react-router-dom": "^4.3.1",
+    "prettier": "^1.14.3",
     "typescript": "^3.1.1"
   }
 }
