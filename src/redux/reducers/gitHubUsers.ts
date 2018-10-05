@@ -31,7 +31,7 @@ const nextLinkReducer: Reducer<string, GitHubUsersAction> = (
   }
 };
 
-interface UsersState {
+export interface UsersState {
   list: GitHubUser[];
   nextLink: string;
   loadingIndicator: loadingIndicatorApi.LoadingIndicatorState;

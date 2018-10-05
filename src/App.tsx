@@ -6,13 +6,20 @@ import { Provider } from 'react-redux';
 import { Route } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { BrowserRouter, Link, Switch } from 'react-router-dom';
+import { Store } from 'redux';
 import GitHubCurrentUserDetails from './components/GitHubCurrentUserDetails';
 import GitHubUsers from './components/GitHubUsers';
 import Home from './components/Home';
+import { GitHubUsersAction } from './redux/actions';
+import { GitHubUsersState } from './redux/reducers';
 
 const FourOhFour = () => <h1>404</h1>;
 
-const App = ({ store }) => (
+interface Props {
+  store: Store<GitHubUsersState, GitHubUsersAction>;
+}
+
+const App: React.SFC<Props> = ({ store }) => (
   <Provider store={store}>
     <BrowserRouter>
       <div>
@@ -42,11 +49,6 @@ const App = ({ store }) => (
             </Navbar.Collapse>
           </Grid>
         </Navbar>
-        {/* <Jumbotron>
-          <Grid>
-            <h1>GitHub Users</h1>
-          </Grid>
-        </Jumbotron> */}
         <Grid>
           <Switch>
             <Route path="/" exact={true} component={Home} />

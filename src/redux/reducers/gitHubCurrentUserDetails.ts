@@ -21,7 +21,7 @@ const userReducer: Reducer<UserState, GitHubUsersAction> = (
   }
 };
 
-interface CurrentUserState {
+export interface CurrentUserState {
   user: UserState;
   loadingIndicator: loadingIndicatorApi.LoadingIndicatorState;
 }

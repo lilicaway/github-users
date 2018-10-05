@@ -8,9 +8,8 @@ import {
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Action } from 'redux';
 import { loadUser } from '../redux/actionCreators';
-import { currentUserApi } from '../redux/reducers';
+import { currentUserApi, GitHubUsersState } from '../redux/reducers';
 import { GitHubUser } from '../types/GitHubUser';
-import { GitHubUsersState } from '../types/GitHubUsersState';
 import LoadingIndicator from './LoadingIndicator';
 
 interface UrlParams {
