@@ -9,7 +9,7 @@ import {
 import { Link } from 'react-router-dom';
 import { Action } from 'redux';
 import { loadUsers } from '../redux/actionCreators';
-import { gitHubUsersApi, GitHubUsersState } from '../redux/reducers';
+import { AppState, gitHubUsersApi } from '../redux/reducers';
 import { LoadingState } from '../redux/reducers/loadingIndicator';
 import { GitHubUser } from '../types/GitHubUser';
 import LoadingIndicator from './LoadingIndicator';
@@ -63,11 +63,10 @@ class GitHubUsers extends React.Component<Props> {
   }
 }
 
-const mapStateToProps: MapStateToPropsParam<
-  Partial<Props>,
-  Props,
-  GitHubUsersState
-> = (state, ownProps): Partial<Props> => {
+const mapStateToProps: MapStateToPropsParam<Partial<Props>, Props, AppState> = (
+  state,
+  ownProps
+): Partial<Props> => {
   const userDataApi = gitHubUsersApi(state);
   return {
     users: userDataApi.getUsers(),

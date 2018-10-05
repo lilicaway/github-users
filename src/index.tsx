@@ -10,10 +10,10 @@ import App from './App';
 import './index.css';
 import { GitHubUsersAction } from './redux/actions';
 import configureStore from './redux/configureStore';
-import { GitHubUsersState } from './redux/reducers';
+import { AppState } from './redux/reducers';
 import registerServiceWorker from './registerServiceWorker';
 
-const store: Store<GitHubUsersState, GitHubUsersAction> = configureStore();
+const store: Store<AppState, GitHubUsersAction> = configureStore();
 
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
 registerServiceWorker();

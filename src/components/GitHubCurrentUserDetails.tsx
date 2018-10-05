@@ -8,7 +8,7 @@ import {
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Action } from 'redux';
 import { loadUser } from '../redux/actionCreators';
-import { currentUserApi, GitHubUsersState } from '../redux/reducers';
+import { AppState, currentUserApi } from '../redux/reducers';
 import { GitHubUser } from '../types/GitHubUser';
 import LoadingIndicator from './LoadingIndicator';
 
@@ -86,11 +86,10 @@ class GitHubCurrentUserDetails extends React.Component<Props> {
   }
 }
 
-const mapStateToProps: MapStateToPropsParam<
-  Partial<Props>,
-  Props,
-  GitHubUsersState
-> = (state, ownProps): Partial<Props> => {
+const mapStateToProps: MapStateToPropsParam<Partial<Props>, Props, AppState> = (
+  state,
+  ownProps
+): Partial<Props> => {
   const userApi = currentUserApi(state);
   return {
     user: userApi.getCurrentUser(),

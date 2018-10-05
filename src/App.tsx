@@ -11,12 +11,12 @@ import GitHubCurrentUserDetails from './components/GitHubCurrentUserDetails';
 import GitHubUsers from './components/GitHubUsers';
 import Home from './components/Home';
 import { GitHubUsersAction } from './redux/actions';
-import { GitHubUsersState } from './redux/reducers';
+import { AppState } from './redux/reducers';
 
 const FourOhFour = () => <h1>404</h1>;
 
 interface Props {
-  store: Store<GitHubUsersState, GitHubUsersAction>;
+  store: Store<AppState, GitHubUsersAction>;
 }
 
 const App: React.SFC<Props> = ({ store }) => (
