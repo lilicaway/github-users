@@ -622,41 +622,47 @@ Object {
 exports[`setDataAsCompleted for github list of users 1`] = `
 Object {
   "payload": undefined,
-  "type": "USERS_DATA_LOADER_COMPLETED",
+  "subType": "USERS",
+  "type": "DATA_LOADER_COMPLETED",
 }
 `;
 
 exports[`setDataAsCompleted for the current user details 1`] = `
 Object {
   "payload": undefined,
-  "type": "CURRENT_USER_DATA_LOADER_COMPLETED",
+  "subType": "CURRENT_USER",
+  "type": "DATA_LOADER_COMPLETED",
 }
 `;
 
 exports[`setDataAsError for github list of users 1`] = `
 Object {
   "payload": "USERS",
-  "type": "undefined_DATA_LOADER_ERROR",
+  "subType": undefined,
+  "type": "DATA_LOADER_ERROR",
 }
 `;
 
 exports[`setDataAsError for the current user details 1`] = `
 Object {
   "payload": "CURRENT_USER",
-  "type": "undefined_DATA_LOADER_ERROR",
+  "subType": undefined,
+  "type": "DATA_LOADER_ERROR",
 }
 `;
 
 exports[`setDataAsLoading for github list of users 1`] = `
 Object {
   "payload": undefined,
-  "type": "USERS_DATA_LOADER_LOADING",
+  "subType": "USERS",
+  "type": "DATA_LOADER_LOADING",
 }
 `;
 
 exports[`setDataAsLoading for the current user details 1`] = `
 Object {
   "payload": undefined,
-  "type": "CURRENT_USER_DATA_LOADER_LOADING",
+  "subType": "CURRENT_USER",
+  "type": "DATA_LOADER_LOADING",
 }
 `;

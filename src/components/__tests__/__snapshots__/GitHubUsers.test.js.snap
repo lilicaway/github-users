@@ -2,7 +2,6 @@
 
 exports[`GitHub Users are shown correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <GitHubUsers
     errorMessage=""
@@ -43,6 +42,7 @@ ShallowWrapper {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -109,7 +109,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "errorMessage": "",
           "loadingState": "COMPLETED",
@@ -198,7 +198,7 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": "1",
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "avatarUrl": "https://avatars0.githubusercontent.com/u/1?v=4",
                   "username": "mojombo",
@@ -210,7 +210,7 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": "2",
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "avatarUrl": "https://avatars0.githubusercontent.com/u/2?v=4",
                   "username": "defunkt",
@@ -222,7 +222,7 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": "3",
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "avatarUrl": "https://avatars0.githubusercontent.com/u/3?v=4",
                   "username": "pjhyett",
@@ -374,7 +374,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "errorMessage": "",
             "loadingState": "COMPLETED",
@@ -463,7 +463,7 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": "1",
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
                     "avatarUrl": "https://avatars0.githubusercontent.com/u/1?v=4",
                     "username": "mojombo",
@@ -475,7 +475,7 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": "2",
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
                     "avatarUrl": "https://avatars0.githubusercontent.com/u/2?v=4",
                     "username": "defunkt",
@@ -487,7 +487,7 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": "3",
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
                     "avatarUrl": "https://avatars0.githubusercontent.com/u/3?v=4",
                     "username": "pjhyett",
@@ -580,8 +580,20 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
   },
 }
 `;

@@ -10,7 +10,7 @@ import { LoadingState } from '../../redux/reducers/loadingIndicator';
 Enzyme.configure({ adapter: new Adapter() });
 
 const expectSpinnerToShow = (component, showing) => {
-  expect(component.find('.fa .fa-spinner .fa-spin').exists()).toBe(showing);
+  expect(component.find('.fa.fa-spinner.fa-spin').exists()).toBe(showing);
 };
 
 test('LoadingIndicator renders initial state', () => {
