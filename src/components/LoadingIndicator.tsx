@@ -26,4 +26,3 @@ const LoadingIndicator: React.SFC<Props> = props => {
 };
 
 export default LoadingIndicator;
-export const LoadingIndicatorForTest = LoadingIndicator;

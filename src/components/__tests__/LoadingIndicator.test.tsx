@@ -1,20 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Enzyme, { shallow, render } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import * as Enzyme from 'enzyme';
+import * as Adapter from 'enzyme-adapter-react-16';
+import * as React from 'react';
 import { Alert } from 'react-bootstrap';
-
-import LoadingIndicator from '../LoadingIndicator';
 import { LoadingState } from '../../redux/reducers/loadingIndicator';
+import LoadingIndicator from '../LoadingIndicator';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const expectSpinnerToShow = (component, showing) => {
+const expectSpinnerToShow = (
+  component: Enzyme.ShallowWrapper,
+  showing: boolean
+) => {
   expect(component.find('.fa.fa-spinner.fa-spin').exists()).toBe(showing);
 };
 
 test('LoadingIndicator renders initial state', () => {
-  const component = shallow(
+  const component = Enzyme.shallow(
     <LoadingIndicator loadingState={LoadingState.INITIAL} errorMessage="" />
   );
   expectSpinnerToShow(component, false);
@@ -22,7 +23,7 @@ test('LoadingIndicator renders initial state', () => {
 });
 
 test('LoadingIndicator renders loading state', () => {
-  const component = shallow(
+  const component = Enzyme.shallow(
     <LoadingIndicator loadingState={LoadingState.LOADING} errorMessage="" />
   );
   expect(component).toMatchSnapshot();
@@ -31,7 +32,7 @@ test('LoadingIndicator renders loading state', () => {
 
 test('LoadingIndicator renders error state', () => {
   const expectedErrorMessage = 'Some Error Message';
-  const component = shallow(
+  const component = Enzyme.shallow(
     <LoadingIndicator
       loadingState={LoadingState.ERROR}
       errorMessage={expectedErrorMessage}
@@ -43,7 +44,7 @@ test('LoadingIndicator renders error state', () => {
 });
 
 test('LoadingIndicator renders completed state', () => {
-  const component = shallow(
+  const component = Enzyme.shallow(
     <LoadingIndicator loadingState={LoadingState.COMPLETED} errorMessage="" />
   );
   expectSpinnerToShow(component, false);
