@@ -1,44 +1,59 @@
-import moxios from 'moxios';
+import * as moxios from 'moxios';
 import * as actionCreatorsAPI from '../actionCreators';
-import allUsersJson from './allUsers.json';
-import currentUserJson from './currentUser.json';
+import { DataLoaderActionSubtype } from '../actions';
+import * as allUsersJson from './allUsers.json';
+import * as currentUserJson from './currentUser.json';
 
 test('setDataAsLoading for github list of users', () => {
-  expect(actionCreatorsAPI.setDataAsLoading('USERS')).toMatchSnapshot();
+  expect(
+    actionCreatorsAPI.setDataAsLoading(DataLoaderActionSubtype.USERS)
+  ).toMatchSnapshot();
 });
 
 test('setDataAsLoading for the current user details', () => {
-  expect(actionCreatorsAPI.setDataAsLoading('CURRENT_USER')).toMatchSnapshot();
+  expect(
+    actionCreatorsAPI.setDataAsLoading(DataLoaderActionSubtype.CURRENT_USER)
+  ).toMatchSnapshot();
 });
 
 test('setDataAsError for github list of users', () => {
-  expect(actionCreatorsAPI.setDataAsError('USERS')).toMatchSnapshot();
+  expect(
+    actionCreatorsAPI.setDataAsError(
+      'Some error',
+      DataLoaderActionSubtype.USERS
+    )
+  ).toMatchSnapshot();
 });
 
 test('setDataAsError for the current user details', () => {
-  expect(actionCreatorsAPI.setDataAsError('CURRENT_USER')).toMatchSnapshot();
+  expect(
+    actionCreatorsAPI.setDataAsError(
+      'Some error',
+      DataLoaderActionSubtype.CURRENT_USER
+    )
+  ).toMatchSnapshot();
 });
 
 test('setDataAsCompleted for github list of users', () => {
-  expect(actionCreatorsAPI.setDataAsCompleted('USERS')).toMatchSnapshot();
+  expect(
+    actionCreatorsAPI.setDataAsCompleted(DataLoaderActionSubtype.USERS)
+  ).toMatchSnapshot();
 });
 
 test('setDataAsCompleted for the current user details', () => {
   expect(
-    actionCreatorsAPI.setDataAsCompleted('CURRENT_USER')
+    actionCreatorsAPI.setDataAsCompleted(DataLoaderActionSubtype.CURRENT_USER)
   ).toMatchSnapshot();
 });
 
 test('addAllUsers', () => {
   const nextLink = 'https://api.github.com/users?since=3';
   expect(
-    actionCreatorsAPI.addAllUsers(allUsersJson),
-    nextLink
+    actionCreatorsAPI.addAllUsers(allUsersJson, nextLink)
   ).toMatchSnapshot();
 });
 
 test('setCurrentUser', () => {
-  const nextLink = 'https://api.github.com/users?since=3';
   expect(actionCreatorsAPI.setCurrentUser(currentUserJson)).toMatchSnapshot();
 });
 
@@ -53,7 +68,7 @@ test('loadUsers', done => {
     moxios.wait(() => {
       try {
         expect(dispatchMock).toBeCalledWith(
-          actionCreatorsAPI.setDataAsLoading('USERS')
+          actionCreatorsAPI.setDataAsLoading(DataLoaderActionSubtype.USERS)
         );
         const allUsersRequest = moxios.requests.mostRecent();
         allUsersRequest
@@ -95,7 +110,9 @@ test('loadUser', done => {
     moxios.wait(() => {
       try {
         expect(dispatchMock).toBeCalledWith(
-          actionCreatorsAPI.setDataAsLoading('CURRENT_USER')
+          actionCreatorsAPI.setDataAsLoading(
+            DataLoaderActionSubtype.CURRENT_USER
+          )
         );
         const currentUserRequest = moxios.requests.mostRecent();
         currentUserRequest

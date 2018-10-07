@@ -3,7 +3,7 @@
 exports[`addAllUsers 1`] = `
 Object {
   "payload": Object {
-    "nextLink": undefined,
+    "nextLink": "https://api.github.com/users?since=3",
     "users": Array [
       Object {
         "avatar_url": "https://avatars0.githubusercontent.com/u/1?v=4",
@@ -637,16 +637,16 @@ Object {
 
 exports[`setDataAsError for github list of users 1`] = `
 Object {
-  "payload": "USERS",
-  "subType": undefined,
+  "payload": "Some error",
+  "subType": "USERS",
   "type": "DATA_LOADER_ERROR",
 }
 `;
 
 exports[`setDataAsError for the current user details 1`] = `
 Object {
-  "payload": "CURRENT_USER",
-  "subType": undefined,
+  "payload": "Some error",
+  "subType": "CURRENT_USER",
   "type": "DATA_LOADER_ERROR",
 }
 `;
