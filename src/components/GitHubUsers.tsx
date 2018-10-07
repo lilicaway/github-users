@@ -14,7 +14,7 @@ import { LoadingState } from '../redux/reducers/loadingIndicator';
 import { GitHubUser } from '../types/GitHubUser';
 import LoadingIndicator from './LoadingIndicator';
 
-interface Props {
+export interface Props {
   loadUsers: () => void;
   loadMoreUsers: (nextLink: string) => void;
   users: GitHubUser[];
@@ -23,7 +23,7 @@ interface Props {
   nextLink: string;
 }
 
-class GitHubUsers extends React.Component<Props> {
+export class GitHubUsers extends React.Component<Props> {
   public componentDidMount() {
     if (this.props.loadingState !== LoadingState.COMPLETED) {
       this.props.loadUsers();
@@ -92,7 +92,6 @@ const mapDispatchToProps: MapDispatchToPropsParam<Partial<Props>, Props> = (
   };
 };
 
-export const UnwrappedGitHubUsersForTest = GitHubUsers;
 export default connect(
   mapStateToProps,
   mapDispatchToProps

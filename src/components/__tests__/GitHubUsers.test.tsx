@@ -1,18 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-import GitHubUsers, {
-  UnwrappedGitHubUsersForTest,
-  UserCardForTest
-} from '../GitHubUsers';
+import * as Enzyme from 'enzyme';
+import * as Adapter from 'enzyme-adapter-react-16';
+import * as React from 'react';
 import { Button } from 'react-bootstrap';
 import { LoadingState } from '../../redux/reducers/loadingIndicator';
+import { GitHubUser } from '../../types/GitHubUser';
+import { GitHubUsers, Props, UserCardForTest } from '../GitHubUsers';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const USERS = [
+const USERS: GitHubUser[] = [
   {
     login: 'mojombo',
     id: 1,
@@ -39,18 +35,21 @@ const USERS = [
   }
 ];
 
-let component;
-let loadMoreUsersFunctionMock;
+let component: Enzyme.ShallowWrapper<Props, Readonly<{}>, GitHubUsers>;
+let loadMoreUsersFunctionMock: jest.Mock<{}>;
 
 beforeEach(() => {
   loadMoreUsersFunctionMock = jest.fn();
-  component = shallow(
-    <UnwrappedGitHubUsersForTest
+  const noOp = () => {
+    // Does nothing
+  };
+  component = Enzyme.shallow<GitHubUsers, Props>(
+    <GitHubUsers
       users={USERS}
       loadingState={LoadingState.COMPLETED}
       errorMessage={''}
       nextLink={'someNextLink'}
-      loadUsers={() => {}}
+      loadUsers={noOp}
       loadMoreUsers={loadMoreUsersFunctionMock}
     />
   );

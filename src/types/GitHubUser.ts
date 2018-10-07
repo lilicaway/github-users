@@ -4,7 +4,9 @@
  */
 export interface GitHubUser {
   avatar_url: string;
+  gravatar_id: string;
   login: string;
-  id: string;
+  id: number;
+  url: string;
   html_url: string;
 }
