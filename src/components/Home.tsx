@@ -7,7 +7,7 @@ const Home: React.SFC = () => (
     <Panel className="container-fluid">
       <h2>Features</h2>
       <p>
-        The app has 1 module. The <Link to="/users">Users</Link> module, where
+        The app has one module. The <Link to="/users">Users</Link> module, where
         you can see the list of GitHub Users. The list shows User Cards, and at
         the bottom you can choose to display more users by clicking the button
         displayed as <Button>Load More...</Button>
@@ -20,9 +20,10 @@ const Home: React.SFC = () => (
       Since this is mostly a demo app, there are some limitations.
       <ul>
         <li>
-          <strong>"Add more users functionality"</strong> is implemented but
-          there is no implementation to reduce the number of users that is being
-          displayed (except for refreshing the page and starting over).
+          <strong>Pagination or Show more users functionality</strong> is
+          implemented but there is no implementation to reduce the number of
+          users that is being displayed (except for refreshing the page and
+          starting over).
         </li>
         <li>
           <strong>Styling:</strong>{' '}
@@ -47,6 +48,12 @@ const Home: React.SFC = () => (
         <li>
           <strong>Tests:</strong> there are examples of different types of
           tests, but not everything is being tested.
+        </li>
+        <li>
+          <strong>TypeScript: </strong>
+          some parts in the TypeScript could be improved. There are some parts
+          marked as TODO with some castings where perhaps better typing could
+          help.
         </li>
       </ul>
     </Panel>
