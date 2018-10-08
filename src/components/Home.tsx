@@ -36,7 +36,7 @@ const Home: React.SFC = () => (
           </a>{' '}
           and{' '}
           <a
-            href="https://react-bootstrap.github.io/components.html"
+            href="https://react-bootstrap.github.io/"
             target="_blank"
             rel="noopener noreferrer"
           >

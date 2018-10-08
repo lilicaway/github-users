@@ -18,7 +18,7 @@ Since this is mostly a demo app, there are some limitations.
 "Pagination" is implemented but there is no implementation to reduce the number of users that are being displayed (except for refreshing the page and starting over).
 
 - **Pagination**: is implemented but there is no implementation to reduce the number of users that are being displayed (except for refreshing the page and starting over). Also, the paging state is not stored in the url, so if you refresh the app after you clicked "Load More", only the first page will be shown again.
-- **Styling**: [Bootstrap](http://getbootstrap.com/css) and [react-bootstrap](https://react-bootstrap.github.io/components.html) are the only things being used for styling the app. No custom .css file was written, so the application doesn't look perfect everywhere. But is responsive by default.
+- **Styling**: [Bootstrap](http://getbootstrap.com/css) and [react-bootstrap](https://react-bootstrap.github.io/) are the only things being used for styling the app. No custom .css file was written, so the application doesn't look perfect everywhere. But is responsive by default.
 - **Tests**: there are examples of different types of tests, but not everything is being tested.
 - **TypeScript**: some parts in the TypeScript could be improved. There are some parts marked as TODO with some castings where perhaps better typing could help.
 
@@ -48,4 +48,4 @@ The build is minified and the filenames include the hashes.<br>
 
 ### Details
 
-Once you open the application, the Home shows more information about the features and limitations of the app.
+Once you open the application, the Home shows some information about the application
